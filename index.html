@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioExplora - Profe Ju</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌱 BioExplora</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#rankings">Rankings</a></li>
+        <li><a href="#busca">Buscar</a></li>
+        <li><a href="https://www.youtube.com/@ProfeJuoficial" target="_blank">Canal Profe Ju</a></li>
+      </ul>
+      <button id="toggle-theme">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Bem-vindo ao BioExplora!</h2>
+      <p>Seu portal de Biologia conectado ao canal da Profe Ju no YouTube!</p>
+    </section>
+
+    <section id="rankings">
+      <h2>Rankings do Mês</h2>
+      <div class="ranking">
+        <h3>Mais Pesquisados</h3>
+        <ul>
+          <li><a href="https://www.youtube.com/results?search_query=DNA+Profe+Ju" target="_blank">DNA</a></li>
+          <li><a href="https://www.youtube.com/results?search_query=Fotossíntese+Profe+Ju" target="_blank">Fotossíntese</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="busca">
+      <h2>Buscar Vídeos</h2>
+      <input type="text" id="searchInput" placeholder="Digite um tema...">
+      <button onclick="buscarVideos()">Buscar</button>
+      <ul id="resultados"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BioExplora. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
