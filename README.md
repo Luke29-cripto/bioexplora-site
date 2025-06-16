@@ -1,22 +1,25 @@
-# 🌱 BioExplora - Site Oficial 🌱
+# 🌱 BioExplora - Site Educacional de Biologia
 
-Bem-vindo ao **BioExplora** - Um site educativo conectado ao canal **Profe Ju** no YouTube!  
-Aqui você encontra conteúdos interativos sobre Biologia, Experimentos e muito mais.
-
----
-
-## 📍 Acesse o Site Online
-
-> **🔗 [Clique aqui para visitar o site](https://Luke29-cripto.github.io/bioexplora-site/)**  
-_(O site é hospedado gratuitamente com **GitHub Pages**.)_
+[![GitHub Pages](https://img.shields.io/badge/online-site-green?style=for-the-badge&logo=github)](https://luke29-cripto.github.io/bioexplora-site/)
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🎯 Objetivo do Projeto
 
-```bash
-📁 bioexplora-site
-├── index.html        # Página principal do site
-├── style.css         # Estilos e layout
-├── script.js         # Funcionalidades em JavaScript
-└── README.md         # Documentação do projeto
+Criar um site interativo de Biologia, conectado ao canal **Profe Ju** no YouTube, com foco em **educação**, **pesquisa**, **usabilidade jovem** e **design moderno**.
+
+---
+
+## 🖥️ Funcionalidades Já Incluídas no Site
+
+✅ Modo Claro e Escuro (Dark Mode)  
+✅ Busca interna por termos de Biologia  
+✅ Mini IA de ajuda (chat simples para dúvidas sobre Biologia)  
+✅ Layout responsivo (Mobile e Desktop)  
+✅ Integração de links com o canal do YouTube  
+✅ Design simples, rápido e com foco em estudantes  
+
+---
+
+## 📂 Estrutura de Arquivos do Projeto
+
