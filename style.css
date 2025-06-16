@@ -1,45 +1,56 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    transition: background 0.3s, color 0.3s;
-}
+/* style.css - Estilo Avançado BioExplora */
 
-header, footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 8px;
-}
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; color: #333; transition: background-color 0.3s, color 0.3s; }
 
-button {
-    padding: 10px;
-    margin-top: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-}
+header { background: linear-gradient(90deg, #4CAF50, #388E3C); color: white; padding: 1rem; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
 
-textarea, input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+nav ul { list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 1rem; }
 
-.hidden {
-    display: none;
-}
+nav a { text-decoration: none; color: white; font-weight: bold; transition: color 0.3s; }
 
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
+nav a:hover { color: #FFD700; }
 
-.dark-mode header, .dark-mode footer {
-    background-color: #333;
-}
+main { padding: 2rem; max-width: 1200px; margin: auto; }
+
+section { margin-bottom: 2rem; padding: 1rem; border-radius: 10px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+.dark-mode { background-color: #121212; color: #e0e0e0; }
+
+.dark-mode header { background: linear-gradient(90deg, #1E88E5, #1565C0); }
+
+.dark-mode nav a { color: #e0e0e0; }
+
+.dark-mode nav a:hover { color: #90CAF9; }
+
+.dark-mode section { background-color: #1e1e1e; box-shadow: 0 4px 6px rgba(255,255,255,0.05); }
+
+button { padding: 0.6rem 1.2rem; border: none; border-radius: 8px; background-color: #4CAF50; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
+
+button:hover { background-color: #45A049; }
+
+input[type="text"], input[type="email"], input[type="password"], textarea { width: 100%; padding: 0.8rem; margin-top: 0.5rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 8px; background-color: #fafafa; }
+
+textarea { resize: vertical; min-height: 120px; }
+
+ul { padding-left: 1.5rem; }
+
+ul li { margin-bottom: 0.5rem; }
+
+footer { text-align: center; padding: 1rem; background-color: #333; color: white; position: relative; bottom: 0; width: 100%; }
+
+#toggle-theme { position: absolute; right: 1rem; top: 1rem; background-color: transparent; color: white; border: none; font-size: 1.5rem; }
+
+.ranking-container { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.ranking { flex: 1; min-width: 250px; }
+
+h1, h2, h3 { font-family: 'Arial Black', Gadget, sans-serif; }
+
+#loginForm, #blocoNotas, #criadorResumo, #historicoPesquisas, #resultadosIA { margin-top: 1rem; padding: 1rem; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; }
+
+.dark-mode #loginForm, .dark-mode #blocoNotas, .dark-mode #criadorResumo, .dark-mode #historicoPesquisas, .dark-mode #resultadosIA { background-color: #292929; border-color: #555; }
+
+#resultados li, #historicoPesquisas li { list-style-type: disc; margin-left: 1rem; }
+
+@media (max-width: 768px) { nav ul { flex-direction: column; align-items: center; } .ranking-container { flex-direction: column; } }
+
