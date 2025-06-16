@@ -1,67 +1,65 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BioExplora</title>
+  <title>BioExplora - Canal Profe Ju</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>BioExplora</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#rankings">Rankings</a></li>
-        <li><a href="#busca">Buscar Vídeos</a></li>
-        <li><a href="#login">Login</a></li>
-        <li><a href="https://www.youtube.com/@ProfeJuoficial" target="_blank">Canal da Profe Ju</a></li>
-      </ul>
-      <button id="toggle-theme">🌙</button>
-    </nav>
-  </header>  <main>
-    <section id="home">
-      <h2>Bem-vindo ao BioExplora!</h2>
-      <p>O guia definitivo de estudos em Biologia com vídeos da <strong>Profe Ju</strong> e ferramentas inteligentes de aprendizado.</p>
-    </section><section id="rankings">
-  <h2>Rankings do Mês</h2>
-  <div id="rankings-container"></div>
+
+<header>
+  <h1>🌱 BioExplora | Canal Profe Ju</h1>
+  <button id="toggle-theme">🌞/🌚 Tema</button>
+  <button onclick="login()">Login</button>
+  <button onclick="register()">Registrar</button>
+</header>
+
+<section id="pesquisa">
+  <h2>🔎 Pesquisar conteúdo</h2>
+  <input type="text" id="searchInput" placeholder="Digite o tema de biologia...">
+  <button onclick="buscarVideos()">Buscar Vídeos</button>
+  <button onclick="gerarResumo()">Gerar Resumo</button>
 </section>
 
-<section id="busca">
-  <h2>Buscar Conteúdo</h2>
-  <input type="text" id="searchInput" placeholder="Digite um tema...">
-  <button onclick="buscarVideos()">Buscar</button>
-  <ul id="resultados"></ul>
+<section id="resultados">
+  <!-- Aqui aparecem os links para vídeos da Profe Ju -->
 </section>
 
 <section id="resumo">
-  <h2>Criar Resumo</h2>
-  <input type="text" id="temaResumo" placeholder="Tema para resumo">
-  <button onclick="criarResumo()">Gerar</button>
-  <p id="resumoTexto"></p>
+  <h3>📋 Resumo:</h3>
+  <p id="resumoArea">Digite um tema e clique em "Gerar Resumo"</p>
+</section>
+
+<section id="gio">
+  <h2>🤖 IA Gio - Sua ajudante de estudos</h2>
+  <button onclick="perguntarGio()">Perguntar para a Gio</button>
 </section>
 
 <section id="blocoNotas">
-  <h2>Bloco de Notas</h2>
-  <textarea id="notas" rows="6" placeholder="Anotações pessoais..."></textarea>
-  <button onclick="salvarNotas()">Salvar</button>
+  <h2>📝 Bloco de Notas</h2>
+  <textarea id="notesArea" rows="6" placeholder="Anote seus resumos ou informações..."></textarea><br>
+  <button onclick="saveNotes()">Salvar Notas</button>
 </section>
 
-<section id="login">
-  <h2>Login</h2>
-  <input type="email" id="email" placeholder="E-mail">
-  <input type="password" id="senha" placeholder="Senha">
-  <button onclick="login()">Entrar</button>
+<section id="history">
+  <!-- Histórico de pesquisas por usuário -->
 </section>
 
-<section id="ia">
-  <h2>IA Gio - Assistente de Estudos</h2>
-  <input type="text" id="perguntaIA" placeholder="Digite sua dúvida">
-  <button onclick="perguntarIA()">Perguntar</button>
-  <div id="respostaIA"></div>
+<section id="ranking">
+  <h2>🏆 Ranking dos temas mais pesquisados do mês</h2>
+  <ul>
+    <li>Fotossíntese</li>
+    <li>Mitose</li>
+    <li>Sistema Nervoso</li>
+    <li>Ecossistemas</li>
+  </ul>
 </section>
 
-  </main>  <footer>
-    <p>&copy; 2025 BioExplora. Todos os direitos reservados.</p>
-  </footer>  <script src="script.js"></script></body>
+<footer>
+  <p>BioExplora - Projeto educativo não oficial - Apenas conteúdo da Profe Ju</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
