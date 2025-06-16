@@ -1,64 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioExplora - Canal Profe Ju</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioExplora</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🌱 BioExplora - Canal Profe Ju</h1>
-        <button id="toggleTheme">🌗 Modo Claro/Escuro</button>
-    </header>
+  <header>
+    <h1>BioExplora</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#rankings">Rankings</a></li>
+        <li><a href="#busca">Buscar Vídeos</a></li>
+        <li><a href="#login">Login</a></li>
+        <li><a href="https://www.youtube.com/@ProfeJuoficial" target="_blank">Canal da Profe Ju</a></li>
+      </ul>
+      <button id="toggle-theme">🌙</button>
+    </nav>
+  </header>  <main>
+    <section id="home">
+      <h2>Bem-vindo ao BioExplora!</h2>
+      <p>O guia definitivo de estudos em Biologia com vídeos da <strong>Profe Ju</strong> e ferramentas inteligentes de aprendizado.</p>
+    </section><section id="rankings">
+  <h2>Rankings do Mês</h2>
+  <div id="rankings-container"></div>
+</section>
 
-    <section id="loginSection">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Digite seu nome">
-        <button onclick="login()">Entrar</button>
-    </section>
+<section id="busca">
+  <h2>Buscar Conteúdo</h2>
+  <input type="text" id="searchInput" placeholder="Digite um tema...">
+  <button onclick="buscarVideos()">Buscar</button>
+  <ul id="resultados"></ul>
+</section>
 
-    <section id="searchSection" class="hidden">
-        <h2>Pesquisar Conteúdos de Biologia</h2>
-        <input type="text" id="searchInput" placeholder="Ex: Fotossíntese">
-        <button onclick="searchContent()">Pesquisar</button>
-        <div id="searchResults"></div>
-    </section>
+<section id="resumo">
+  <h2>Criar Resumo</h2>
+  <input type="text" id="temaResumo" placeholder="Tema para resumo">
+  <button onclick="criarResumo()">Gerar</button>
+  <p id="resumoTexto"></p>
+</section>
 
-    <section id="notesSection" class="hidden">
-        <h2>Bloco de Anotações</h2>
-        <textarea id="notes" placeholder="Escreva suas anotações..."></textarea>
-        <button onclick="saveNotes()">Salvar Anotações</button>
-    </section>
+<section id="blocoNotas">
+  <h2>Bloco de Notas</h2>
+  <textarea id="notas" rows="6" placeholder="Anotações pessoais..."></textarea>
+  <button onclick="salvarNotas()">Salvar</button>
+</section>
 
-    <section id="aiSection" class="hidden">
-        <h2>Gio - IA de Ajuda</h2>
-        <input type="text" id="aiInput" placeholder="Digite sua dúvida...">
-        <button onclick="askAI()">Perguntar</button>
-        <div id="aiResponse"></div>
-    </section>
+<section id="login">
+  <h2>Login</h2>
+  <input type="email" id="email" placeholder="E-mail">
+  <input type="password" id="senha" placeholder="Senha">
+  <button onclick="login()">Entrar</button>
+</section>
 
-    <section id="resumeSection" class="hidden">
-        <h2>Gerar Resumo</h2>
-        <input type="text" id="resumeInput" placeholder="Tema para resumo">
-        <button onclick="generateSummary()">Gerar</button>
-        <div id="summaryResult"></div>
-    </section>
+<section id="ia">
+  <h2>IA Gio - Assistente de Estudos</h2>
+  <input type="text" id="perguntaIA" placeholder="Digite sua dúvida">
+  <button onclick="perguntarIA()">Perguntar</button>
+  <div id="respostaIA"></div>
+</section>
 
-    <section id="mindMapSection" class="hidden">
-        <h2>Mapa Mental (Interativo)</h2>
-        <div id="mindMap">[Mapa mental será gerado aqui]</div>
-    </section>
-
-    <section id="rankingSection" class="hidden">
-        <h2>📈 Rankings do Mês</h2>
-        <ol id="rankingList"></ol>
-    </section>
-
-    <footer>
-        <p>🌿 Site oficial do BioExplora - Conectado apenas ao canal da Profe Ju no YouTube 🌿</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+  </main>  <footer>
+    <p>&copy; 2025 BioExplora. Todos os direitos reservados.</p>
+  </footer>  <script src="script.js"></script></body>
 </html>
