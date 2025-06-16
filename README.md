@@ -1,57 +1,95 @@
-# 🌱 BioExplora - Plataforma Educacional Interativa
+🌱 BioExplora - Site Oficial da Profe Ju
 
-Bem-vindo ao **BioExplora**, o site educacional definitivo para estudantes de Biologia, com conteúdo **100% integrado ao canal da Profe Ju** no YouTube. Esta é uma ferramenta completa para aprender, anotar, revisar e explorar a Biologia de forma divertida, moderna e com auxílio de IA!
+Bem-vindo ao BioExplora, o site oficial de apoio ao canal da Profe Ju no YouTube, dedicado ao ensino de Biologia de forma interativa, moderna e personalizada! 🎥📚
 
----
-
-## 🚀 Funcionalidades Principais
-
-### 🔍 Pesquisa Inteligente
-Pesquise qualquer tema de Biologia e receba **vídeos diretamente do canal da Profe Ju**, com base no assunto digitado.
-
-### 🤖 Gio – Sua IA de Estudos
-A IA **Gio** responde perguntas relacionadas à Biologia, ajuda a entender conteúdos e funciona como seu tutor virtual personalizado.
-
-### 📝 Bloco de Anotações
-Escreva, edite e salve anotações diretamente no navegador. Suas ideias e resumos ficam salvos localmente.
-
-### 🧠 Gerador de Resumos
-Digite um tema e receba um resumo pronto, direto na tela, com base no conteúdo do canal da Profe Ju.
-
-### 🧩 Mapa Mental (Beta)
-Um módulo em desenvolvimento para gerar mapas mentais simples de forma automática com base nos temas pesquisados.
-
-### 📊 Rankings do Mês
-- **Mais Pesquisados**
-- **Mais Assistidos**
-- **Mais Completos**
-
-Veja os assuntos em alta no BioExplora!
-
-### 👤 Sistema de Login Simples
-Personalize sua experiência com login local (via nome), que habilita todos os recursos personalizados no site.
-
-### 🌗 Modo Claro e Escuro
-Escolha entre o modo claro ou escuro para estudar com mais conforto, a qualquer hora do dia!
 
 ---
 
-## 🔗 Canal Oficial Integrado
+🎯 Objetivo do Site
 
-Todos os vídeos e conteúdos são extraídos **exclusivamente** do canal oficial da **Profe Ju** no YouTube:
-📺 [Canal da Profe Ju](https://www.youtube.com/@profeju)
+O BioExplora foi desenvolvido com o foco 100% no conteúdo da Profe Ju, criando uma ponte direta entre o YouTube e os estudantes, oferecendo ferramentas inteligentes para estudo e pesquisa. Tudo o que o aluno pesquisar no site será direcionado apenas a vídeos e materiais relacionados ao canal Profe Ju.
+
 
 ---
 
-## 👩‍💻 Como Rodar o Projeto
+🚀 Funcionalidades do Site
 
-> O site está pronto para ser hospedado via **GitHub Pages**. Basta clonar ou fazer upload do repositório.
+🔍 Sistema de Busca Inteligente
 
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/bioexplora-site
+Toda pesquisa feita no site é direcionada ao YouTube, buscando apenas vídeos da Profe Ju.
 
-# Acesse a pasta
-cd bioexplora-site
+A IA "Gio" processa a busca, filtra os melhores vídeos do canal e gera sugestões relevantes.
 
-# Envie ao GitHub ou abra o index.html no navegador
+Além dos vídeos, a IA também traz resumos rápidos sobre o tema pesquisado, para facilitar o entendimento inicial.
+
+
+🤖 IA de Apoio aos Estudos (IA Gio)
+
+Responde dúvidas sobre temas de Biologia relacionados ao conteúdo da Profe Ju.
+
+Gera resumos, relatórios de estudo, mapas mentais básicos e listas de tópicos-chave automaticamente.
+
+Pode ajudar o aluno a montar um plano de estudo focado nos vídeos da Profe Ju.
+
+
+📈 Rankings Mensais
+
+Mais Pesquisados: Os temas mais buscados pelos usuários do site.
+
+Mais Vistos: Vídeos do canal da Profe Ju com mais visualizações no período.
+
+Mais Completos: Conteúdos com melhor avaliação de completude (cruzando dados de duração + número de tópicos abordados).
+
+
+📝 Bloco de Anotações
+
+O usuário pode fazer anotações rápidas sobre os temas que estiver estudando.
+
+As anotações ficam salvas localmente no navegador do usuário.
+
+
+🗺️ Mapas Mentais Automáticos
+
+Ao pesquisar um termo, o site gera um mapa mental simples e interativo, destacando os principais tópicos relacionados ao tema buscado.
+
+O mapa é baseado no conteúdo dos vídeos da Profe Ju.
+
+
+🧠 Relatórios e Resumos Automáticos
+
+Geração de um resumo automático e um mini-relatório com base na pesquisa feita.
+
+Todos os textos têm como referência o canal da Profe Ju.
+
+
+🌞🌙 Modo Claro e Escuro
+
+Interface com botão de alternância entre modo claro e modo escuro, oferecendo uma experiência de navegação confortável para todos os horários.
+
+
+🔐 Sistema de Login Local
+
+Login opcional para salvar preferências (modo escuro, anotações, pesquisas recentes).
+
+Sem necessidade de banco de dados ou senha: é um sistema local simples via navegador.
+
+
+
+---
+
+📌 Resumo Geral:
+
+O site BioExplora é uma verdadeira central de estudos 100% integrada ao canal da Profe Ju, com:
+
+✅ Busca de vídeos exclusiva no canal; ✅ IA Gio para apoio nas pesquisas; ✅ Rankings mensais dinâmicos; ✅ Anotações e mapas mentais; ✅ Resumos e relatórios automáticos; ✅ Modo claro/escuro; ✅ Sistema de login local; ✅ Totalmente voltado para ajudar o aluno no estudo da Biologia!
+
+
+---
+
+🛠️ Importante: Este site é de fãs para fãs, feito para ajudar nos estudos e não possui vínculo comercial direto com o YouTube ou com a Profe Ju.
+
+
+---
+
+🌐 Canal da Profe Ju no YouTube
+
