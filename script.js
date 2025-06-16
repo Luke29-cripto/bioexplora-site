@@ -1,78 +1,34 @@
-document.getElementById("toggleTheme").addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
-});
+// script.js
 
-function login() {
-    const user = document.getElementById("username").value.trim();
-    if (user) {
-        document.getElementById("loginSection").classList.add("hidden");
-        document.querySelectorAll("section:not(#loginSection)").forEach(sec => sec.classList.remove("hidden"));
-        alert(`Bem-vindo ao BioExplora, ${user}!`);
-    } else {
-        alert("Digite seu nome para continuar.");
-    }
-}
+// Simulação de banco de dados simples let usuarios = JSON.parse(localStorage.getItem('usuarios')) || {}; let usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual')) || null;
 
-function searchContent() {
-    const query = document.getElementById("searchInput").value.toLowerCase();
-    const results = document.getElementById("searchResults");
-    results.innerHTML = "";
+// Modo claro/escuro const toggleTheme = document.getElementById('toggle-theme'); toggleTheme.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); });
 
-    const videos = {
-        "fotossíntese": "https://www.youtube.com/watch?v=KzKw4CyO2uQ",
-        "célula": "https://www.youtube.com/watch?v=oa7gFRZTQHU",
-        "ecologia": "https://www.youtube.com/watch?v=gVWaGzpuKDo"
-    };
+// IA de ajuda simples (respostas simuladas) function respostaIA(pergunta) { const respostas = { 'fotossíntese': 'A fotossíntese é o processo pelo qual as plantas convertem luz solar em energia química.', 'dna': 'O DNA é a molécula que carrega as informações genéticas dos seres vivos.', 'mitose': 'Mitose é o processo de divisão celular que gera duas células-filhas idênticas.', 'meiose': 'Meiose é uma divisão celular que reduz pela metade o número de cromossomos, formando gametas.' }; pergunta = pergunta.toLowerCase(); return respostas[pergunta] || 'Desculpe, ainda estou aprendendo sobre isso!'; }
 
-    if (videos[query]) {
-        results.innerHTML = `<a href="${videos[query]}" target="_blank">Assista no Canal Profe Ju: ${query}</a>`;
-    } else {
-        results.innerHTML = "Nenhum vídeo encontrado no canal Profe Ju para este tema.";
-    }
-}
+function perguntarIA() { const pergunta = document.getElementById('input-pergunta').value; const resposta = respostaIA(pergunta); document.getElementById('resposta-ia').innerText = resposta; }
 
-function saveNotes() {
-    const notes = document.getElementById("notes").value;
-    localStorage.setItem("bioexplora_notes", notes);
-    alert("Anotações salvas com sucesso!");
-}
+// Busca de vídeos no canal da Profe Ju function buscarVideos() { const termo = document.getElementById('searchInput').value; const resultado = document.getElementById('resultados'); resultado.innerHTML = '';
 
-function askAI() {
-    const question = document.getElementById("aiInput").value.toLowerCase();
-    const aiResponse = document.getElementById("aiResponse");
+const link = document.createElement('a'); link.href = https://www.youtube.com/results?search_query=${encodeURIComponent(termo + ' Profe Ju')}; link.target = '_blank'; link.innerText = Ver resultados para "${termo}" no canal da Profe Ju;
 
-    const respostas = {
-        "fotossíntese": "Fotossíntese é o processo pelo qual plantas transformam luz em energia química.",
-        "célula": "A célula é a menor unidade funcional dos seres vivos.",
-        "ecologia": "Ecologia estuda a relação dos seres vivos com o meio ambiente."
-    };
+const li = document.createElement('li'); li.appendChild(link); resultado.appendChild(li);
 
-    aiResponse.innerText = respostas[question] || "Gio: Ainda estou aprendendo! Tente outro termo de Biologia.";
-}
+salvarHistoricoPesquisa(termo); }
 
-function generateSummary() {
-    const topic = document.getElementById("resumeInput").value.toLowerCase();
-    const summaryResult = document.getElementById("summaryResult");
+// Bloco de notas function salvarNota() { const nota = document.getElementById('blocoNota').value; if (usuarioAtual) { usuarios[usuarioAtual.email].nota = nota; localStorage.setItem('usuarios', JSON.stringify(usuarios)); alert('Nota salva!'); } else { alert('Você precisa estar logado para salvar notas.'); } }
 
-    const resumos = {
-        "fotossíntese": "Resumo: Fotossíntese é um processo fundamental que converte energia solar em energia química nas plantas.",
-        "célula": "Resumo: As células são as unidades básicas da vida, contendo estruturas como núcleo e citoplasma.",
-        "ecologia": "Resumo: Ecologia é o ramo da biologia que estuda as interações entre organismos e seu ambiente."
-    };
+function carregarNota() { if (usuarioAtual) { document.getElementById('blocoNota').value = usuarios[usuarioAtual.email]?.nota || ''; } }
 
-    summaryResult.innerText = resumos[topic] || "Nenhum resumo encontrado para esse tema.";
-}
+// Histórico de pesquisas function salvarHistoricoPesquisa(termo) { if (usuarioAtual) { const historico = usuarios[usuarioAtual.email].historico || []; historico.push(termo); usuarios[usuarioAtual.email].historico = historico; localStorage.setItem('usuarios', JSON.stringify(usuarios)); } }
 
-function generateMindMap(topic) {
-    const mapDiv = document.getElementById("mindMap");
-    mapDiv.innerHTML = `Mapa mental gerado para o tema: ${topic}. [Função futura para expansão gráfica]`;
-}
+function mostrarHistorico() { if (usuarioAtual) { const historico = usuarios[usuarioAtual.email].historico || []; alert('Seu histórico de pesquisas:\n' + historico.join('\n')); } }
 
-const rankingTopics = ["Fotossíntese", "Célula", "Ecologia"];
-const rankingList = document.getElementById("rankingList");
+// Login e cadastro function cadastrar() { const email = prompt('Digite seu e-mail:'); const senha = prompt('Crie uma senha:'); if (!usuarios[email]) { usuarios[email] = { senha, nota: '', historico: [] }; localStorage.setItem('usuarios', JSON.stringify(usuarios)); alert('Cadastro realizado!'); } else { alert('Este e-mail já está cadastrado.'); } }
 
-rankingTopics.forEach((item, index) => {
-    const li = document.createElement("li");
-    li.innerText = `${index + 1}º - ${item}`;
-    rankingList.appendChild(li);
-});
+function login() { const email = prompt('Digite seu e-mail:'); const senha = prompt('Digite sua senha:'); if (usuarios[email] && usuarios[email].senha === senha) { usuarioAtual = { email }; localStorage.setItem('usuarioAtual', JSON.stringify(usuarioAtual)); alert('Login realizado!'); carregarNota(); } else { alert('E-mail ou senha inválidos.'); } }
+
+function logout() { usuarioAtual = null; localStorage.removeItem('usuarioAtual'); alert('Você saiu da conta.'); }
+
+// Chamada de carregamento automático window.onload = () => { carregarNota(); };
+
