@@ -1,65 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BioExplora - Canal Profe Ju</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioExplora - Portal de Biologia</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
-<header>
-  <h1>🌱 BioExplora | Canal Profe Ju</h1>
-  <button id="toggle-theme">🌞/🌚 Tema</button>
-  <button onclick="login()">Login</button>
-  <button onclick="register()">Registrar</button>
-</header>
+    <header>
+        <div class="logo">BioExplora 🌱</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Vídeos</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#" id="toggleMode">🌙/☀️</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="pesquisa">
-  <h2>🔎 Pesquisar conteúdo</h2>
-  <input type="text" id="searchInput" placeholder="Digite o tema de biologia...">
-  <button onclick="buscarVideos()">Buscar Vídeos</button>
-  <button onclick="gerarResumo()">Gerar Resumo</button>
-</section>
+    <section class="search-section">
+        <h1>Explore o mundo da Biologia</h1>
+        <input type="text" id="searchInput" placeholder="Buscar vídeos...">
+        <button onclick="searchVideos()">Buscar</button>
+    </section>
 
-<section id="resultados">
-  <!-- Aqui aparecem os links para vídeos da Profe Ju -->
-</section>
+    <section id="videoList" class="video-list">
+        <!-- Lista de vídeos será carregada via JS -->
+    </section>
 
-<section id="resumo">
-  <h3>📋 Resumo:</h3>
-  <p id="resumoArea">Digite um tema e clique em "Gerar Resumo"</p>
-</section>
+    <section class="ranking-section">
+        <h2>Top 3 Vídeos do Mês 📊</h2>
+        <ol id="rankingList">
+            <li>Genética - Profe Ju</li>
+            <li>Ecologia - Profe Ju</li>
+            <li>Citologia - Profe Ju</li>
+        </ol>
+    </section>
 
-<section id="gio">
-  <h2>🤖 IA Gio - Sua ajudante de estudos</h2>
-  <button onclick="perguntarGio()">Perguntar para a Gio</button>
-</section>
+    <footer>
+        <p>&copy; 2025 BioExplora. Projeto educacional sem fins lucrativos.</p>
+    </footer>
 
-<section id="blocoNotas">
-  <h2>📝 Bloco de Notas</h2>
-  <textarea id="notesArea" rows="6" placeholder="Anote seus resumos ou informações..."></textarea><br>
-  <button onclick="saveNotes()">Salvar Notas</button>
-</section>
-
-<section id="history">
-  <!-- Histórico de pesquisas por usuário -->
-</section>
-
-<section id="ranking">
-  <h2>🏆 Ranking dos temas mais pesquisados do mês</h2>
-  <ul>
-    <li>Fotossíntese</li>
-    <li>Mitose</li>
-    <li>Sistema Nervoso</li>
-    <li>Ecossistemas</li>
-  </ul>
-</section>
-
-<footer>
-  <p>BioExplora - Projeto educativo não oficial - Apenas conteúdo da Profe Ju</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
