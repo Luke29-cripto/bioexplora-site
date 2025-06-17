@@ -1,60 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadVideos();
-    setupDarkModeToggle();
-});
+    let allVideos = [];
 
-// Função para carregar os vídeos a partir do arquivo JSON
-function loadVideos() {
-    fetch('data/videos.json')
-        .then(response => response.json())
-        .then(videos => {
-            displayVideos(videos);
-            window.allVideos = videos; // Salvar todos os vídeos para futura busca
-        })
-        .catch(error => {
-            console.error('Erro ao carregar os vídeos:', error);
-        });
-}
-
-// Função para exibir os vídeos na tela
-function displayVideos(videos) {
-    const videoList = document.getElementById('videoList');
-    videoList.innerHTML = '';
-
-    if (videos.length === 0) {
-        videoList.innerHTML = '<p>Nenhum vídeo encontrado.</p>';
-        return;
+    // Função para carregar os vídeos do JSON
+    function loadVideos() {
+        fetch('./data/videos.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo JSON.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                allVideos = data;
+                displayVideos(allVideos);
+            })
+            .catch(error => {
+                console.error('Erro no carregamento:', error);
+                const videoList = document.getElementById('videoList');
+                if (videoList) {
+                    videoList.innerHTML = '<p>Erro ao carregar os vídeos. Verifique a conexão ou o arquivo JSON.</p>';
+                }
+            });
     }
 
-    videos.forEach(video => {
-        const card = document.createElement('div');
-        card.className = 'video-card';
+    // Função para exibir vídeos
+    function displayVideos(videos) {
+        const videoList = document.getElementById('videoList');
+        if (!videoList) return;
 
-        card.innerHTML = `
-            <h3>${video.titulo}</h3>
-            <p>${video.descricao}</p>
-            <a href="${video.link}" target="_blank">Assistir</a>
-        `;
+        videoList.innerHTML = '';
 
-        videoList.appendChild(card);
-    });
-}
+        if (videos.length === 0) {
+            videoList.innerHTML = '<p>Nenhum vídeo encontrado.</p>';
+            return;
+        }
 
-// Função de busca de vídeos
-function searchVideos() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const filteredVideos = window.allVideos.filter(video =>
-        video.titulo.toLowerCase().includes(searchInput) ||
-        video.descricao.toLowerCase().includes(searchInput)
-    );
+        videos.forEach(video => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
 
-    displayVideos(filteredVideos);
-}
+            card.innerHTML = `
+                <h3>${video.titulo}</h3>
+                <p>${video.descricao}</p>
+                <a href="${video.link}" target="_blank">Assistir</a>
+            `;
 
-// Dark Mode Toggle
-function setupDarkModeToggle() {
-    const toggle = document.getElementById('toggleMode');
-    toggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
-}
+            videoList.appendChild(card);
+        });
+    }
+
+    // Função para fazer a busca de vídeos
+    function searchVideos() {
+        const searchInput = document.getElementById('searchInput');
+        if (!searchInput) return;
+
+        const termo = searchInput.value.toLowerCase();
+        const resultado = allVideos.filter(video =>
+            video.titulo.toLowerCase().includes(termo) ||
+            video.descricao.toLowerCase().includes(termo)
+        );
+
+        displayVideos(resultado);
+    }
+
+    // Função para ativar o Dark Mode
+    function setupDarkModeToggle() {
+        const toggle = document.getElementById('toggleMode');
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+            });
+        }
+    }
+
+    // Setup inicial
+    loadVideos();
+    setupDarkModeToggle();
+
+    // Configurar a busca (quando clicar no botão de buscar)
+    const searchButton = document.querySelector('button');
+    if (searchButton) {
+        searchButton.addEventListener('click', searchVideos);
+    }
+});
