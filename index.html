@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioExplora - Seu Portal de Biologia</title>
+    <title>BioExplora - Pesquisa Biológica</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,34 +12,17 @@
         <button id="themeToggle">🌙 Modo Escuro</button>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Vídeos</a></li>
-            <li><a href="#">Pesquisas</a></li>
-            <li><a href="#">Notas</a></li>
-        </ul>
-    </nav>
+    <section class="intro">
+        <p>Explore conceitos de Biologia com uma pesquisa simples!</p>
+    </section>
 
-    <main>
-        <section class="intro">
-            <h2>Bem-vindo ao BioExplora</h2>
-            <p>Explore o mundo da biologia com conteúdos atualizados, vídeos educativos e ferramentas de estudo!</p>
-        </section>
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Digite um tema de biologia...">
+        <button onclick="search()">🔍 Pesquisar</button>
+        <button onclick="clearResults()">🧹 Limpar Resultados</button>
+    </section>
 
-        <section class="search-section">
-            <input type="text" id="searchInput" placeholder="Pesquise por um tema de biologia...">
-            <button onclick="search()">🔍 Pesquisar</button>
-        </section>
-
-        <section id="results">
-            <!-- Resultados da pesquisa aparecem aqui -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 BioExplora. Todos os direitos reservados.</p>
-    </footer>
+    <section id="results"></section>
 
     <script src="script.js"></script>
 </body>
