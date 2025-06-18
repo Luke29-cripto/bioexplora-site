@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioExplora - Portal de Biologia</title>
-    <link rel="stylesheet" href="style/style.css">
+    <title>BioExplora - Seu Portal de Biologia</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <div class="logo">BioExplora 🌱</div>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Vídeos</a></li>
-                <li><a href="#">Ranking</a></li>
-                <li><a href="#" id="toggleMode">🌙/☀️</a></li>
-            </ul>
-        </nav>
+        <h1>🌱 BioExplora</h1>
+        <button id="themeToggle">🌙 Modo Escuro</button>
     </header>
 
-    <section class="search-section">
-        <h1>Explore o mundo da Biologia</h1>
-        <input type="text" id="searchInput" placeholder="Buscar vídeos...">
-        <button onclick="searchVideos()">Buscar</button>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Vídeos</a></li>
+            <li><a href="#">Pesquisas</a></li>
+            <li><a href="#">Notas</a></li>
+        </ul>
+    </nav>
 
-    <section id="videoList" class="video-list">
-        <!-- Lista de vídeos será carregada via JS -->
-    </section>
+    <main>
+        <section class="intro">
+            <h2>Bem-vindo ao BioExplora</h2>
+            <p>Explore o mundo da biologia com conteúdos atualizados, vídeos educativos e ferramentas de estudo!</p>
+        </section>
 
-    <section class="ranking-section">
-        <h2>Top 3 Vídeos do Mês 📊</h2>
-        <ol id="rankingList">
-            <li>Genética - Profe Ju</li>
-            <li>Ecologia - Profe Ju</li>
-            <li>Citologia - Profe Ju</li>
-        </ol>
-    </section>
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Pesquise por um tema de biologia...">
+            <button onclick="search()">🔍 Pesquisar</button>
+        </section>
+
+        <section id="results">
+            <!-- Resultados da pesquisa aparecem aqui -->
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 BioExplora. Projeto educacional sem fins lucrativos.</p>
+        <p>&copy; 2025 BioExplora. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
